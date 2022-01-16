@@ -13,8 +13,11 @@ pip install matplotlib
 
 
 ## How to play
-step1: clone the project
+```bash
+step1: clone the project.
 step2: run the controller.py and enjoy the game.
+```
+
 
 ## Note
 application creates custom nxn metrics size of board so enter only n when you select custom boardsize. 
