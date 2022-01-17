@@ -17,10 +17,12 @@ if (gameSetting == 'Y' or gameSetting == 'y'):
         config = Configuration.CustomBoard()
         print('Enter your board Size')
         boardSize = config.customBoardSize()
+        totalBoardSize = boardSize * boardSize
     else:
         print('you have choosed default settings for board')
         config = Configuration.CustomBoard()
         boardSize = config.defaultBoardSize()
+        totalBoardSize = boardSize * boardSize
     print('Do you want customize the ladders then press Y and for default board type N')
     laddersSetting = input()
     if (laddersSetting == 'Y' or boardSetting == 'y'):
@@ -51,19 +53,20 @@ else:
     snakes = snakeConfig.defaultPostionSnake()
     ladderConfig = Configuration.Ladder()
     ladders = ladderConfig.defaultPostionLadder()
+    totalBoardSize = boardSize * boardSize
 print('now game starts')
 moves = gameMove.Move()
 while True:
     A = input("Press enter to throw dice for player 1:")
     pos1 = moves.move(pos1, ladders, snakes)
     player1.append(pos1)
-    if (pos1 >= 50):
+    if (pos1 >= totalBoardSize):
         print("player 1 wins")
         break
     B = input("Press enter to throw dice for player 2:")
     pos2 = moves.move(pos2, ladders, snakes)
     player2.append(pos2)
-    if (pos2 >= 50):
+    if (pos2 >= totalBoardSize):
         print("player 2 wins")
         break
 
